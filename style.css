@@ -48,7 +48,7 @@ body {
 /* グリッド & カード */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* ← 常に3カラムに */
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto 60px;
