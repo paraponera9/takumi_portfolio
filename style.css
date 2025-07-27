@@ -43,6 +43,7 @@ body {
 .intro p {
   margin-top: 1em;
   white-space: pre-line; /* 手動改行 \n を活かしたい場合 */
+  font-size: 14px;
 }
 
 /* グリッド & カード */
