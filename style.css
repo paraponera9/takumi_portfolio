@@ -1,88 +1,83 @@
-body {
+/* リセット & 全体スタイル */
+* {
   margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  color: #333;
   background: #fff;
-  color: #000;
 }
 
-header {
+/* ヘッダー */
+.site-header {
   text-align: center;
   padding: 60px 20px 30px;
 }
-
-header h1 {
+.site-header h1 {
   font-size: 2.8em;
   margin-bottom: 0.2em;
 }
-
-header p {
+.site-header p {
   font-size: 1.2em;
   color: #666;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  padding: 0 20px 60px;
-  max-width: 1200px;
-  margin: auto;
-}
-
+/* 紹介セクション */
 .intro {
   max-width: 800px;
   margin: 60px auto 40px;
   padding: 0 20px;
   font-size: 1.1em;
   line-height: 1.8;
-  color: #333;
 }
-
 .intro h2 {
   font-size: 1.6em;
   margin-bottom: 0.5em;
   color: #007acc;
 }
 
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* グリッド & カード */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
 }
-
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 .card {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
   cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
-
 .card img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.card:hover img {
+  transform: scale(1.05);
 }
 
-.card h2 {
-  padding: 15px;
-  font-size: 1.1em;
-  margin: 0;
-  border-top: 1px solid #ddd;
-  transition: color 0.2s ease;
-}
-
-.card:hover h2 {
-  color: #007bff;
+/* レスポンス調整（モバイル用） */
+@media (max-width: 480px) {
+  .site-header h1 {
+    font-size: 2.2em;
+  }
+  .site-header p {
+    font-size: 1em;
+  }
+  .intro {
+    margin: 40px auto 30px;
+    font-size: 1em;
+  }
 }
